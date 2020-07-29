@@ -1,6 +1,10 @@
 const express = require('express');
+
 const app = express();
-require ('./db/dbConnect');
+app.use(express.json())
+
+require('./db/dbConnect');
+
 app.use(require('./routes'));
 
 app.listen(3000, () => {
